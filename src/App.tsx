@@ -6,14 +6,13 @@ function App() {
   useEffect(() => {
     api.get("/regions/sum-subscribers").then((res) => {
       setRegions(res.data);
-      console.log(res.data);
     });
   }, []);
   return (
     <>
       {regions.map((region) => (
         <div key={region.id}>
-          <h2>{region.name}</h2>
+          <h2>{region.title}</h2>
           <p>Subscribers: {region.totalSubscribers}</p>
         </div>
       ))}
